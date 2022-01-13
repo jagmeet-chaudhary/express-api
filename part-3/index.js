@@ -2,6 +2,7 @@ const express = require("express");
 const healthCheckRouter = require("./routes/healthcheck");
 const employeeRouter = require("./routes/employee");
 const app = express();
+app.use(express.json())
 app.use("/healthcheck", healthCheckRouter);
 app.use("/employees", employeeRouter);
 app.server = app.listen(3001, () => {
